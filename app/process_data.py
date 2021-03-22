@@ -2,7 +2,8 @@ def get_data():
     from requests import Request, Session
     from requests.exceptions import ConnectionError, Timeout, TooManyRedirects
     import json
-    ticker_url='https://api.nomics.com/v1/currencies/ticker'
+    ticker_url='https://api.nomics.com'
+    endpoint='/v1/currencies/ticker'
     parameters = {
           'key':'8381f81057e8766c11cd0109bae84864',
           'ids': 'BTC'
@@ -15,9 +16,9 @@ def get_data():
     session.headers.update(headers)
 
     try:
-        response = session.get(ticker_url, params=parameters)
+        response = session.get(ticker_url+endpint, params=parameters)
         results = json.loads(response.text)
-    
+
     except (ConnectionError, Timeout, TooManyRedirects) as e:
           print(e)
     return results
