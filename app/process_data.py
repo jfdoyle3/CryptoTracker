@@ -16,7 +16,7 @@ def get_data():
     session.headers.update(headers)
 
     try:
-        response = session.get(ticker_url+endpoint, params=parameters)
+        response = session.get(ticker_url+endpint, params=parameters)
         results = json.loads(response.text)
 
     except (ConnectionError, Timeout, TooManyRedirects) as e:
