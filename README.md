@@ -1,4 +1,4 @@
-# Python-REST-API
+# CryptoTracker
 
  Python - Flask, bootstrap, REST, 3rd Party API
 
